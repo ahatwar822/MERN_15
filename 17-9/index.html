@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        main{
+            text-align: center;
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1{
+            font-size: 5rem;
+            border-radius: 10px;
+            background-color: antiquewhite;
+            padding: 1rem 2rem;
+            ;
+        }
+
+        button{
+            /* margin-top: 1rem; */
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 10px;
+            background-color: green;
+            cursor: pointer;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button:active{
+            scale: 0.9;
+        }
+
+        #box{
+            width: 300px;
+            height: 250px;
+            background-color: red;
+            margin: 1rem;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+        hr{
+            color: #000;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>0</h1>
+        <button>Genrate Random Number</button>
+        <hr><hr>-=
+        <h2>Your Random Color <span></span></h2>
+        <div id="box">
+
+        </div>
+        <button id="clc">Genrate Random Color</button>
+    </main>
+    
+
+
+
+    <script>
+        // Math.floor()
+        // Math.randam()
+
+        let h1 = document.querySelector("h1");
+        
+        let button = document.querySelector("button");
+
+        button.addEventListener("click", () => {
+            let random = Math.floor(Math.random() * 100);
+            h1.textContent = random;
+        })
+
+        let box = document.querySelector("#box");
+        let clc = document.querySelector("#clc");
+        let h2 = document.querySelector("h2 span");
+
+        clc.addEventListener("click", () => {
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+            h2.textContent = `rgb(${r},${g},${b})`;
+
+            h2.style.color = `rgb(${r},${g},${b})`;
+            h2.style.fontStyle = "italic";
+
+
+        })
+
+        // CreateElement and appendChild
+    </script>
+</body>
+</html>

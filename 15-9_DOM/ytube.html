@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello</h1>
+
+    <button>Click me</button>
+
+    <script>
+
+        // 4 pillers of DOM
+
+        // 1. Selection of an Elements
+        // 2. Changing html
+        // 3. changing css
+        // 4. Event listeners
+
+
+        let h1 = document.querySelector("h1");
+
+        h1.innerHTML = "Headding chenged";
+
+        h1.style.color = "red";
+        h1.style.backgroundColor = "lightBlue"
+
+        //Event listeners
+
+        let button = document.querySelector('button')
+
+
+
+        button.addEventListener('click', function () {
+
+            if (document.body.style.backgroundColor == "black") {
+                document.body.style.backgroundColor = "lightpink";
+            } else {
+                document.body.style.backgroundColor = "black";
+            }
+        })
+
+        
+    </script>
+</body>
+
+</html>

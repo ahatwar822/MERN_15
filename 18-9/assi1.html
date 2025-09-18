@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://www.cricbuzz.com/a/img/v1/0x0/i1/c375237/2022-09-16/7-7-2022-ipl-2022-qualifier-1.jpg);
+            background-size: cover;
+            
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+        button:active{
+            transform: scale(0.9);
+            background-color: rosybrown;
+        }
+
+        div{
+            height: 150px;
+            width: 200px;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color:antiquewhite;
+
+            
+        }
+        div h2{ 
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }   
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Who will be winner of IPL 2026</h2>
+
+        <div>
+            <h2>***</h2>
+        </div>
+        <h3>Full Name of Team</h3>
+        <h4>Trophies: <span>x</span> win</h4>
+        <button>Guess</button>
+    </main>
+
+
+    <script>
+        // let arr = ["MI", "RCB", "DC", "CSK"];
+
+        let button = document.querySelector("button");
+        let div = document.querySelector("div");
+        let h3 = document.querySelector("h3");
+        let h4 = document.querySelector("h4 span");
+
+        button.addEventListener("click", () => {
+            let random = Math.floor(Math.random() * teams.length);
+            let h2 = document.querySelector("div h2");
+            h2.textContent = teams[random].shortName;
+
+            h3.textContent = teams[random].fullName;
+            h4.textContent = teams[random].trophies;
+            h2.style.color = teams[random].primaryColor;
+            div.style.backgroundColor = teams[random].secondaryColor;
+        })
+
+
+        let teams = [
+            {
+                shortName: "MI",    
+                fullName: "Mumbai Indians",
+                primaryColor: "Red",
+                secondaryColor: "White",
+                trophies: 1
+
+            },
+            {
+                shortName: "RCB",
+                fullName: "Royal Challengers Bangalore",
+                primaryColor: "Blue",
+                secondaryColor: "white",
+                trophies: 5
+            },
+            {
+                shortName: "DC",
+                fullName: "Delhi Capitals",
+                primaryColor: "yellow",
+                secondaryColor: "black",
+                trophies: 8
+            },
+            {
+                shortName: "CSK",
+                fullName: "Chennai Super Kings",
+                primaryColor: "Yellow",
+                secondaryColor: "blue",
+                trophies: 10
+            }
+        ]
+    </script>
+</body>
+</html>

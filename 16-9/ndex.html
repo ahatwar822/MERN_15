@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #light{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="light">
+
+</div>
+
+
+
+<button id="on">ON</button>
+<button id="off">Off</button>
+
+<script>
+
+    let light = document.getElementById('light');
+    let on = document.getElementById('on');
+    let off = document.getElementById('off');
+
+    on.addEventListener('click', () => {
+        light.style.backgroundColor = 'yellow';
+    })
+
+    off.addEventListener('click', () => {
+        light.style.backgroundColor = 'black';
+    })
+
+   
+ 
+</script>
+
+</body>
+</html>
