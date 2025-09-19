@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment no 1| Day 19</title>
+    <style>
+
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #blb{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+        button{
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid black;
+            border-radius: 10px;;
+            color: #000;
+        }
+
+        button:active{
+            transform: scale(0.9);
+            background-color: rosybrown;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="blb">
+
+    </div>
+
+    <button>ON</button>
+
+    <script>
+        
+        let blb = document.querySelector("#blb");
+        let button = document.querySelector("button");
+
+        let fleg = 1;
+
+        button.addEventListener("click", () => {
+            if(fleg == 1){
+                blb.style.backgroundColor = "yellow";
+                fleg = 0;
+            }else{
+                blb.style.backgroundColor = "#fff";
+                fleg = 1;
+            }
+        })
+
+    </script>
+</body>
+</html>
