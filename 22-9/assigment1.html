@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center
+        }
+
+        button{
+            
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            text-transform: uppercase;
+            z-index: 999;
+        }
+
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <button>click</button>
+
+    
+    <script>
+
+        let button = document.querySelector("button");
+
+        button.addEventListener("click", () => {
+            let x= Math.floor(Math.random() * 100);
+            let y = Math.floor(Math.random() * 100);
+            let z = Math.floor(Math.random() * 360);
+            let h = Math.floor(Math.random() * 150);
+
+
+            let img = document.createElement("img");
+            img.style.height = h+"px";
+            img.style.left = `${x}%`;
+            img.style.top = `${y}%`;
+            img.style.transform = `rotate(${z}deg)`;
+            
+            img.setAttribute("src", "https://png.pngtree.com/png-vector/20241211/ourlarge/pngtree-chota-bhim-cartoon-carector-png-image_14703652.png");
+            document.body.appendChild(img);
+            
+            
+        })
+
+    </script>
+</body>
+</html>
