@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html{
+            cursor: none;
+        }
+
+        body{
+            cursor: none;
+            overflow: hidden;
+            background-color: white;
+            
+
+        }
+        #cursor{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            transition: all linear 0.1s ;
+
+        }
+
+        #india{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+           font-size: 80px;
+           mix-blend-mode: difference;
+           color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>mousemove on x : <span></span></h1>
+    <h2>mousemove on y : <span></span></h2>
+
+    <div id="cursor"></div>
+
+    <h1 id="india"> Namaste India</h1>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
