@@ -1,0 +1,29 @@
+// what is git - version control system
+//               managing the version/updation of code
+//               upadate the code, who is the author,with date
+
+
+// working directory
+//    |
+//    | git add <filename>
+//    |
+// staging area
+//    |
+//    | git commit -m "message"
+//    |
+// commit area
+// local repository
+// remote repository
+
+// git install
+
+// git setup/config
+
+// git init
+
+// git add . (for all files )/ git add index.html
+
+// git commit -m "first commit"
+
+// git push
+
