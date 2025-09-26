@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kebord Event</title>
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center
+        }
+
+        h1{
+            font-size: 5rem;
+            border-radius: 10px;
+            background-color: antiquewhite;
+            padding: 15px 20px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>****</h1>
+
+    <script>
+
+
+        // keybord event
+        let hedding = document.querySelector("h1")
+
+        document.addEventListener("keydown", (event) => {
+            hedding.textContent = event.key
+            console.log(event.code);
+        })
+    </script>
+</body>
+</html>
