@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 2rem 3rem;
+        }
+
+        .top {
+            display: flex;
+            height: 20vh;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            overflow: hidden;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        img:active {
+            transform: scale(0.9);
+        }
+
+        .bottom {
+            height: 70vh;
+            border: 5px solid black;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <img src="https://png.pngtree.com/png-vector/20241116/ourmid/pngtree-animated-character-in-casual-outfit-png-image_14454537.png"
+            alt="">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/034/618/177/small_2x/3d-cute-kid-presenting-pose-free-png.png"
+            alt="">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/022/730/716/small_2x/ai-generative-charming-3d-fashion-boy-with-bowler-hat-perfect-for-retro-or-nostalgic-concepts-transparent-background-free-png.png"
+            alt="">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/025/003/252/small_2x/cute-cartoon-girl-student-character-on-transparent-background-generative-ai-png.png"
+            alt="">
+    </div>
+    <div class="bottom"></div>
+
+    <script>
+        // playing all imge in bottom div
+        let images = document.querySelectorAll("img");
+        let bottom = document.querySelector(".bottom");
+
+        let to = Math.floor(Math.random() * 100);
+        let left = Math.floor(Math.random() * 100);
+        let transform = Math.floor(Math.random() * 360);
+        let height = Math.floor(Math.random() * 150);
+
+
+        images.forEach((img) => {
+
+
+
+            img.addEventListener("click", () => {
+                let imgsrc = img.getAttribute("src");
+                let newimg = document.createElement("img");
+
+                let to = Math.floor(Math.random() * 100);
+                let left = Math.floor(Math.random() * 100);
+                let transform = Math.floor(Math.random() * 360);
+                let height = Math.floor(Math.random() * 150);
+
+
+                newimg.style.top = `${to}%`;
+                newimg.style.left = `${left}%`;
+                newimg.style.transform = `rotate(${transform}deg)`;
+                newimg.style.height = `${height}px`;
+                newimg.style.position = "absolute";
+
+                newimg.setAttribute("src", imgsrc);
+                bottom.appendChild(newimg);
+
+            })
+        })
+
+
+    </script>
+
+</body>
+
+</html>
