@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+    <script>
+        
+        let arr = [10,20,30,40,50]
+
+        
+       let sum = 0;
+       for (let i =0; i <arr.length; i++){
+        sum = sum + arr[i];
+       };
+
+       console.log(sum);
+
+       arr.forEach((element) => {
+        sum = sum + element;
+       });
+
+       console.log(sum);
+
+
+       var arr1 = [
+        {
+            name: "a",
+            marks: 10
+        },
+        {
+            name: "b",
+            marks: 20
+        },
+        {
+            name: "c",
+            marks: 30
+        }
+       ]
+
+       let sum1 = 0;
+       arr1.forEach((element) => {
+        sum1 = sum1 + element.marks;
+       });
+
+       console.log(sum1);
+
+       let avg = sum1 / arr1.length;
+       console.log(avg);
+
+    </script>
+</body>
+</html>
