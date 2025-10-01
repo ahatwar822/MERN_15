@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin flexing() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin button() {
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    padding: 1rem 2rem;
+    color: white;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+@import 'nav';
+
+
+main {
+    height: 100%;
+    width: 100%;
+
+    @include flexing();
+
+
+    
+
+    #center {
+        display: flex;
+        width: 100%;
+        height: 60%;
+        background-color: black;
+        padding: 1rem 2rem;
+
+        #c_left {
+            width: 50%;
+            height: 100%;
+            background-color: rgb(135, 133, 165);
+            padding: 1rem 2rem;
+            
+
+            @include flexing();
+
+            #c_left1 {
+                width: 100%;
+                height: 30%;
+                background-color: rgb(30, 97, 36);
+                padding: 1rem 2rem;
+                color: white;
+                font-size: 1rem;
+                @include flexing();
+            }
+
+            #c_left2 {
+                width: 100%;
+                height: 30%;
+                background-color: rgb(50, 105, 66);
+                color: white;
+                font-size: 1rem;
+                @include flexing();
+            }
+
+            #c_left3 {
+                width: 100%;
+                height: 30%;
+                background-color: rgb(80, 113, 80);
+                padding: 1rem 2rem;
+                color: white;
+                font-size: 1rem;
+                @include flexing();
+            }
+
+            button {
+                @include button();
+
+                background-color: rosybrown;
+                
+            }
+        }
+
+        #c_right {
+            width: 50%;
+            height: 100%;
+            background-color: rgb(165, 133, 133);
+            padding: 1rem 2rem;
+            display: flex;
+            @include flexing();
+
+            button {
+                @include button();
+                
+                background-color: rosybrown;
+                
+            }
+        }
+
+        @import "footer";
+
+    }
+}
