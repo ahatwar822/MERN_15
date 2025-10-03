@@ -240,4 +240,6 @@ showTheCards();
 //     }
 //   });
 
-// }); // DOMContentLoaded end
+// }); 
+ 
+// DOMContentLoaded end
