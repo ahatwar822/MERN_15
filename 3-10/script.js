@@ -103,11 +103,12 @@ main.addEventListener('click', function (dets) {
     let btn = dets.target;
 
     if (btn.innerText == "Add Friend") {
-        dets.target.status = "Friend"
+        stuData[dets.target.id].status = "friend";
+        console.log(stuData[dets.target.id].status);
         btn.innerText = "Remove Friend";
         btn.style.color = "red";
     } else {
-        dets.target.status = "stranger"
+        stuData[dets.target.id].status = "stranger";
         btn.innerText = "Add Friend";
         btn.style.color = "white";
     }

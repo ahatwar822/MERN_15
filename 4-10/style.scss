@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+
+#main{
+
+    width: 100%;
+    background-color: beige;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+
+
+    .card{
+
+        height: 350px;
+        width: 290px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px 5px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        img{
+            height: 90px;
+            width: 90px;
+
+            border-radius: 50%;
+        }
+
+        h2{
+            font-size: 1.7rem;
+        }
+
+        h3{
+            font-size: 1.3rem;
+            color: red;
+        }
+
+        .friend{
+            color: green;
+        }
+
+        .stranger{
+            color: red;
+        }
+
+        button{
+            padding: 10px;
+            color: white;
+            background-color: rgba(196, 175, 98, 0.851);
+;
+            border-radius: 7px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:active{
+            transform: scale(0.9);
+            background-color: rgba(160, 143, 81, 0.851);
+        }
+
+        
+    }
+}
