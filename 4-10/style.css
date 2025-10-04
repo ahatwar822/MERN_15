@@ -43,10 +43,10 @@ html, body {
   font-size: 1.3rem;
   color: red;
 }
-#main .card .friend {
+#main .card .Friend {
   color: green;
 }
-#main .card .stranger {
+#main .card .Stranger {
   color: red;
 }
 #main .card button {

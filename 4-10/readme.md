@@ -1,5 +1,5 @@
-like = "https://ahatwar822.github.io/MERN_15/4-10/index.html"
+link = "https://ahatwar822.github.io/MERN_15/4-10/index.html"
 
-screenshot
+Screenshot
 
-![alt text](image.png)
+![alt text](image-1.png)
