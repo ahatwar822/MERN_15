@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-Do App | JS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        main {
+            height: 100%;
+            width: 100%;
+
+            background-color: beige;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #container {
+            height: 80%;
+            min-width: 500px;
+            padding: 20px 30px;
+            border: 1px solid black;
+            border-radius: 20px;
+            background-color: whitesmoke;
+            box-shadow: 2px 2px 15px 5px black;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* justify-content: center; */
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 600;
+            margin: 20px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        form input {
+            height: 40px;
+            width: 300px;
+            margin-right: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            padding-left: 10px;
+            color: blueviolet;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid black;
+        }
+
+        form button {
+            height: 40px;
+            width: 100px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            background-color: beige;
+            box-shadow: 1px 1px 10px 4px black;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: scale(0.9);
+            box-shadow: none;
+            background-color: whitesmoke;
+        }
+
+
+
+        #task {
+            margin-top: 20px;
+            width: 100%;
+
+            padding: 20px 50px;
+
+        }
+
+        li {
+            /* list-style: none; */
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        li button {
+
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+
+            cursor: pointer;
+        }
+
+        li button:hover {
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div id="container">
+            <h1>To Do List</h1>
+            <form action="">
+                <input type="text" placeholder="Add Task" />
+                <button>Add</button>
+            </form>
+
+            <div id="task">
+                <ol>
+                    <li>Your Tasks >>></li>
+                </ol>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+
+        let form = document.querySelector("form");
+        let input = document.querySelector("input");
+        let ul = document.querySelector("ol");
+
+        let userInput = [];
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            userInput.push(input.value);
+
+            addTask();
+           
+            input.value = "";
+        })
+
+        function addTask() {
+            let clutter = "";
+
+            userInput.forEach((elm, index) => {
+
+                clutter += `<li><p>${elm}</p><button id=${index} " >❌</button></li>`;
+
+            })
+            ul.innerHTML = clutter;
+            // deleteTask();
+   
+        }
+
+        addTask();
+
+        // create a bottom to delete the task
+        
+
+        function deleteTask() {
+
+            let ol = document.querySelector("ol");
+            let li = document.querySelectorAll("li");
+            
+            ol.addEventListener("click", function (e) {
+                console.log(userInput[e.target.id]);
+
+                userInput.splice(e.target.id, 1);
+
+                addTask();
+                
+            })
+           
+        }
+
+         deleteTask();
+
+       
+
+       
+
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>
