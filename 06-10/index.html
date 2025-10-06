@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oct-6</title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" placeholder="enterName">
+        <button>sumbit</button>
+    </form>
+
+
+    <ul>
+        <li>name</li>
+        
+    </ul>
+
+
+
+
+    <script>
+
+        let form = document.querySelector('form')
+        let userText = document.querySelector("input")
+        let btn = document.querySelector("button")
+
+
+        let user = ["aman", "aman"];
+
+        form.addEventListener('submit', function (e) {
+            console.log(userText.value)
+
+            e.defaultPrevented();
+            user.push(userText.value);
+            addName();
+
+            userText.value = "";
+
+        })
+
+
+        function addName() {
+            
+            let sum = "";
+
+            user.forEach(function(elm){
+
+                sum += `<li>${elm}</li>`
+
+                console.log(sum)
+            })
+
+            document.querySelector("ul").innerHTML = sum
+        }
+
+        addName();
+
+
+    </script>
+
+</body>
+
+</html>

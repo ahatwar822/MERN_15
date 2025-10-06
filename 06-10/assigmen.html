@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+
+        <input id="nameInput" type="text" placeholder="Enter Name">
+        <input id="emailInput" type="email" placeholder="Enter Nmail">
+
+        <button>submit</button>
+    </form>
+
+    <ul>
+        
+    </ul>
+    
+
+    <script>
+
+        let user = [
+            {username:"aaaa", email: "1232@gmil.com"}
+        ]
+
+        let form = document.querySelector('form')
+        
+        let btn = document.querySelector("button")
+
+        let name = document.querySelector("#nameInput")
+        let email = document.querySelector("#emailInput")
+
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault()
+
+            let nValue = name.value;
+            let evalue = email.value;
+
+            let newUser = 
+                {username : nValue, email: evalue
+                }
+            
+
+            user.push(newUser)
+
+            console.log(user)
+
+            nValue ="";
+            evalue="";
+        })
+
+        function adduser(){
+
+            sum = "";
+
+            user.forEach(function(elm){
+                sum += `
+                <li> ${elm.username} , ${elm.email}</li>`
+
+                
+            })
+
+            document.querySelector("ul").innerHTML = sum;
+        };
+
+        adduser();
+    </script>
+</body>
+</html>
