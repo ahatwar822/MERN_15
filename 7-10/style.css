@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Student | Assigment</title>
-
-    <style>
-
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             height: 100%;
             width: 100%;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             background-color: rgb(22, 22, 22);
+            cursor: none;
         }
 
-        main{
+        #cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            transition: all linear 0.1s;
+
+        }
+
+        main {
             height: 100%;
             width: 100%;
             display: flex;
@@ -33,10 +36,10 @@
 
         }
 
-        nav{
+        nav {
             height: 70px;
             width: 100%;
-            border: 1px solid white;
+            /* border: 1px solid white; */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,51 +47,55 @@
             background-color: rgba(240, 248, 255, 0.142);
         }
 
-        #logo{
+        #logo {
             height: 100%;
             width: 40%;
-            border: 1px solid white;
             display: flex;
             align-items: center;
         }
 
-        #logo h1{
+        #logo h1 {
             font-size: 25px;
         }
 
-        
 
-        #nav-left{
+
+        #nav-left {
             height: 100%;
             width: 40%;
-            border: 1px solid white;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
         }
 
-        #nav-left h3{
+        #nav-left h3 {
             font-size: 15px;
             font-weight: 300;
             cursor: pointer;
-        
-            
+
+
         }
 
-        #nav-left h3:nth-last-child(1){
-            color:white;
-            
+        #nav-left h3:nth-last-child(1) {
+            color: white;
+            text-decoration: underline;
+            text-decoration-color: orangered;
+            text-decoration-thickness: 2px;
+            text-decoration-line: overline;
+
+
         }
-        #nav-left h3:hover{
+
+        #nav-left h3:hover {
             color: orangered;
         }
 
-        #nav-left h3:active{
+        #nav-left h3:active {
             scale: 1.3;
             color: orangered;
         }
 
-        #cointener{
+        #cointener {
             height: 100%;
             width: 100%;
             display: flex;
@@ -98,7 +105,7 @@
 
         }
 
-        #top{
+        #top {
             height: 50vh;
             width: 40%;
             min-width: 480px;
@@ -106,23 +113,26 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: flex-start;
-            border: 1px solid white;
-            padding: 20px 30px;
+            /* border: 1px solid white; */
+            padding: 20px 50px;
+            margin-left: 50px;
             gap: 10px;
+            mix-blend-mode: difference;
+            /* color: rgb(22, 22, 22); */
         }
 
-        #top h1{
+        #top h1 {
             font-size: 40px;
-            font-family:'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, monospace;
             font-weight: 800;
             letter-spacing: -1px;
         }
 
-        #top p{
+        #top p {
             font-size: 17px;
         }
 
-        #top button{
+        #top button {
             height: 45px;
             width: 60%;
             min-width: 150px;
@@ -136,23 +146,23 @@
             cursor: pointer;
         }
 
-        #top button:hover{
+        #top button:hover {
             background-color: orangered;
         }
 
-        #stdCards{
+        #stdCards {
             /* height: 40vh; */
-            width: 100vw;
+            width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
             padding: 20px 30px;
-            border: 1px solid white;
+            /* border: 1px solid white; */
         }
 
-        #admin_section{
+        #admin_section {
             height: 100vh;
             width: 100%;
             display: flex;
@@ -164,18 +174,19 @@
             right: 0;
             bottom: 0;
             margin: auto;
-            background-color: rgba(0, 0, 0, 0.863);
-           
-            
-            /* display: none; */
+            background-color: rgba(0, 0, 0, 0.822);
+
+
+            display: none;
         }
 
-        #admin{
+        #admin {
             height: 500px;
             width: 40%;
             min-width: 480px;
             min-width: 480px;
             border: 1px solid white;
+            border-radius: 10px;
             padding: 20px 30px;
             gap: 10px;
             color: azure;
@@ -183,18 +194,39 @@
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            
+            position: relative;
             background-color: black;
+
         }
 
-        #admin h1{
+        #admin #close {
+            height: 30px;
+            width: 30px;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+
+        }
+
+        #admin #close:hover {
+            transform: scale(1.2);
+        }
+
+
+        #admin h1 {
             font-size: 40px;
-            font-family:'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, monospace;
             font-weight: 800;
             letter-spacing: -1px;
         }
 
-        #admin form{
+        #admin form {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -202,27 +234,26 @@
             gap: 10px;
             height: 70%;
             width: 100%;
-            
-           
+
         }
 
-        #admin form input{
+        #admin form input {
             height: 45px;
             width: 90%;
             min-width: 150px;
             align-items: center;
             text-align: center;
-            border: none;   
+            border: none;
             border-bottom: 1px solid white;
             background-color: transparent;
-            color:palegreen;
+            color: palegreen;
             font-size: 17px;
             font-weight: 500;
             letter-spacing: 1px;
             cursor: pointer;
         }
 
-        #admin form button{
+        #admin form button {
             height: 45px;
             width: 60%;
             min-width: 150px;
@@ -235,68 +266,74 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
-            
+
         }
 
-        #admin form button:hover{
+        #admin form button:hover {
             background-color: whitesmoke;
             color: black;
         }
 
-        #admin form button:active{
+        #admin form button:active {
             transform: scale(0.9);
         }
 
-        
-    </style>
-</head>
-<body>
+        .card {
+            height: 400px;
+            width: 300px;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 20px 30px;
+            gap: 10px;
+            color: azure;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            box-shadow: 0px 0px 10px 1px orangered;
+        }
 
-    <main>
-        <nav>
-            <div id="logo">
-                <h1>Student Dashbord</h1>
-            </div>
+        .card:hover {
+            height: 399px;
+            width: 299px;
+            box-shadow: 0px 0px 10px 5px orangered;
+        }
 
-            <div id="nav-left">
-                <h3>Home</h3>
-                <h3>Admin</h3>
-                
-            </div>
-        </nav>
-        <div id="cointener">
+        .card img {
+            height: 180px;
+            width: 180px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
 
-            <div id="top">
-                <h1>Lorem ipsum dolor sit amet consectetur</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta doloribus beatae ipsa asperiores odio! Voluptates?</p>
+        .card h2 {
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
 
-                <button>Read More</button>
-            </div>
+        .card h3 {
+            font-size: 16px;
+        }
 
-            <div id="stdCards">
+        .card button {
+            height: 45px;
+            width: 40%;
+            min-width: 150px;
+            font-size: 15px;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
 
-            </div>
-        </div>
-    </main>
+        .card button:active {
+            transform: scale(0.9);
+        }
 
-    <div id="admin_section">
-        <div id="admin">
-            <h1>Add Student</h1>
-            <form action="">
-                <input type="text" placeholder="Enter Student Name"/>
-                <input type="email" placeholder="Enter Student Email">
-                <!-- add photo -->
-                <input type="file" accept="image/*">
-
-                <button>Add Student</button>
-            </form>
-
-        </div>
-    </div>
-    
-
-    <script>
-
-    </script>
-</body>
-</html>
+        .card button:hover {
+            font-size: 16px;
+            font-weight: 600;
+            color: orangered;
+        }
