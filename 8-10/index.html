@@ -25,13 +25,14 @@
 
         .card {
             height: 200px;
-            width: 350px;
+            min-width: 350px;
             background-color: #fff;
             border-radius: 10px;
             padding: 20px 30px;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            box-shadow: 1px 1px 15px 5px black;
         }
 
         h3 {
@@ -42,7 +43,7 @@
         }
 
         #outer {
-
+            width: 100%;
             height: 10px;
             background-color: gainsboro;
             border-radius: 10px;
@@ -58,6 +59,8 @@
         button {
             width: 100px;
             height: 30px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         button:active {
@@ -75,47 +78,12 @@
 
             </div>
         </div>
-        <button>Downlode</button>
+        <button>Download</button>
     </div>
 
 
     <script src="script.js"></script>
-    <script>
-        let h3 = document.querySelector("h3")
-
-        let btn = document.querySelector("button")
-
-        let inner = document.querySelector("#inner")
-
-
-        function btn1() {
-            let per = 0;
-            let color = 0;
-
-
-            let progess = setInterval(function () {
-                per++;
-                color++;
-                h3.innerHTML = `${per}%`
-                inner.style.width = `${color}%`
-
-            }, 50);
-
-            setTimeout(() => {
-                clearInterval(progess)
-            }, 5000);
-
-            btn.disabled = true;
-
-        }
-
-        btn.addEventListener('click', btn1)
-
-
-
-
-
-    </script>
+   
 </body>
 
 </html>
