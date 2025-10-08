@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oct-8 | Js</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gainsboro;
+        }
+
+        .card {
+            height: 200px;
+            width: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            align-items: end;
+            width: 100%;
+
+        }
+
+        #outer {
+
+            height: 10px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+
+        #inner {
+            width: 10%;
+            height: 100%;
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h3>0%</h3>
+        <div id="outer">
+            <div id="inner">
+
+            </div>
+        </div>
+        <button>Downlode</button>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        let h3 = document.querySelector("h3")
+
+        let btn = document.querySelector("button")
+
+        let inner = document.querySelector("#inner")
+
+
+        function btn1() {
+            let per = 0;
+            let color = 0;
+
+
+            let progess = setInterval(function () {
+                per++;
+                color++;
+                h3.innerHTML = `${per}%`
+                inner.style.width = `${color}%`
+
+            }, 50);
+
+            setTimeout(() => {
+                clearInterval(progess)
+            }, 5000);
+
+            btn.disabled = true;
+
+        }
+
+        btn.addEventListener('click', btn1)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
