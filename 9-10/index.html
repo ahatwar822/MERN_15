@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oct-9 | Whatsapp</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container{
+            height: 75%;
+            width: 37%;
+            min-width: 360px;
+            min-width: 330px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            
+            position: relative;
+        }
+
+        #top{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid black;
+            padding: 15px;
+        }
+
+        #bottom{
+            height: 90%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            scrollbar-width: none;
+            
+            
+        }
+
+        .status{
+            height: 80px;
+            border: 1px solid rgb(144, 136, 136);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            padding: 20px 15px;
+            
+        }
+
+        .status img{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 4px solid green;
+            pointer-events: none;
+        }
+
+        .status h3{
+            font-size: 20px;
+            pointer-events: none;
+        }
+
+        #full_status{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            /* background-color: rgba(0, 0, 0, 0.507); */
+            /* background-image: url(); */
+            background-size: cover;
+            background-position: center;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            display:none;
+        }
+
+        #outer{
+            height: 5px;
+            width: 100%;
+            background-color: antiquewhite;
+            position: absolute;
+            top: 6px;
+            left: 0;
+            border-radius: 10px;
+        }
+
+        #inner{
+            height: 100%;
+            width: 5%;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div id="container">
+            <div id="top">
+                <h1>Whatsapp</h1>
+            </div>
+            <div id="bottom">
+
+                <div class="status">
+                    <img src="" alt="">
+                    <h3>Name of me</h3>
+                </div>
+                
+
+            </div>
+            <div id="full_status">
+                <div id="outer">
+                    <div id="inner">
+
+                    </div>
+                </div>
+                 <div id="User_status" class="status">
+                    <img id="status_img" src="" alt="">
+                    <h3 id="status_name">Name of me</h3>
+                </div>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
