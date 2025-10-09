@@ -33,8 +33,6 @@ let adminSection = document.querySelector("#admin_section");
 let cross = document.querySelector("#close");
 
 
-
-
 adminBtn.addEventListener("click", () => {
     adminSection.style.display = "flex";
 })
@@ -104,24 +102,19 @@ function addcards() {
     })
 
     document.querySelector("#stdCards").innerHTML = cutter;
-
+ 
 }
 
-function deletcards() {
     document.querySelector("#stdCards").addEventListener("click", function (e) {
+    let select = e.target.id;
+    console.log(select);
 
-        console.log(e.target.id);
+    if (select >= 0 ) {
+        stdData.splice(select, 1);
+        addcards();
+    }
+})
 
-        let index = e.target.id;
 
-        if (index >= 0) {
-            stdData.splice(index, 1);
-            addcards();
-        }
-
-    })
-}
-
-deletcards();
 
 addcards();
