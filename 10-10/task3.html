@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_3</title>
+</head>
+
+<style></style>
+
+<body>
+    <!-- 3. Make a typing speed test application. When the page loads, randomly show one sentence from an array of sentences.
+    Start a timer when the user starts typing inside the input box. When they finish typing (same text as displayed),
+    stop the timer and show how many seconds it took. Add a “Try Again” button that resets everything and shows a new
+    random sentence. You must handle all these actions with pure DOM manipulation and JavaScript timers. -->
+
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Typing Speed Test</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box
+            }
+
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+            }
+
+            main {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #container {
+                height: 75%;
+                width: 37%;
+                min-width: 360px;
+                min-width: 330px;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+
+            #top {
+                height: 20%;
+                width: 100%;
+                border-bottom: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #center {
+                height: 55%;
+                width: 100%;
+                border-bottom: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #center p {
+                font-size: 1.5rem;
+                text-align: center;
+                color: gray;
+            }
+
+            #bottom {
+                height: 20%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #sentence {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            #input {
+
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+                width: 100%;
+                height: 100px;
+            }
+
+            #timer {
+                margin-top: 0.5rem;
+            }
+
+            #try-again {
+                margin-top: 0.5rem;
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <main>
+            <div id="container">
+                <div id="top">
+                    <h1>Typing Speed Test</h1>
+                </div>
+                <div id="center">
+                    <p id="sentence"></p>
+                </div>
+
+                <div id="bottom">
+                    <input type="text" id="input" placeholder="Start typing..." />
+                    <p id="timer"></p>
+                    <button id="try-again">Try Again</button>
+                </div>
+
+            </div>
+        </main>
+
+
+
+        <script>
+            // Array of sample sentences
+            const sentences = [
+                "The quick brown fox jumps over the lazy dog.",
+                "Practice makes perfect: keep typing to get faster and more accurate.",
+                "Typing tests help improve speed and reduce errors.",
+                "Learning to type properly saves time in the long run.",
+                "Always keep your hands relaxed and your posture straight.",
+                "Small, consistent improvements add up over time.",
+                "JavaScript can manipulate the DOM and handle timers.",
+                "Focus on accuracy first; speed will follow naturally.",
+                "Consistency beats intensity when learning a new skill.",
+                "Break big tasks into small, manageable pieces.",
+                "Clean code is easier to read, test, and maintain.",
+                "Use keyboard shortcuts to speed up your workflow.",
+                "A calm mind types better than a rushed one.",
+                "Measure progress frequently to stay motivated.",
+                "Switch between practice sentences to avoid memorization.",
+                "Set realistic goals and celebrate small wins.",
+                "Make every practice session intentional and focused.",
+                "Keep your workspace tidy to reduce distractions.",
+                "Short, daily practice sessions often beat long, rare ones.",
+                "Rest and recovery are part of any learning process."
+            ];
+
+            let tryAgainButton = document.getElementById('try-again');
+            let sentenceElement = document.getElementById('sentence');
+            let timerElement = document.getElementById('timer');
+            let inputElement = document.getElementById('input');
+
+            // DOM elements
+            let randomIndex = Math.floor(Math.random() * sentences.length);
+            sentenceElement.innerHTML = sentences[randomIndex];
+
+
+            let startTime;
+            let timerRunning = false;
+
+            // Function to load a random sentence
+            function loadRandomSentence() {
+                let randomIndex = Math.floor(Math.random() * sentences.length);
+                sentenceElement.textContent = sentences[randomIndex];
+                inputElement.value = "";
+                timerElement.textContent = "";
+                timerRunning = false;
+            }
+
+            // Start timer when user starts typing
+            inputElement.addEventListener('input', () => {
+                if (!timerRunning && inputElement.value.length === 1) {
+                    startTime = new Date().getTime();
+                    timerRunning = true;
+                }
+
+                // Check if input matches the sentence exactly
+                if (inputElement.value === sentenceElement.textContent) {
+                    let endTime = new Date().getTime();
+                    let timeTaken = ((endTime - startTime) / 1000).toFixed(2);
+                    timerElement.textContent = `You took ${timeTaken} seconds! 🎉`;
+                    timerRunning = false;
+                }
+            });
+
+            // Try Again button reloads a new sentence
+            tryAgainButton.addEventListener('click', () => {
+                loadRandomSentence();
+            });
+
+            // Load one random sentence on page load
+            loadRandomSentence();
+
+
+
+
+
+
+        </script>
+
+    </body>

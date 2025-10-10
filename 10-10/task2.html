@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_2</title>
+
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 2. Create a div box of size 200×200px. When you hover the mouse over it, 
+     change its background color to a random
+    color. When the mouse leaves, return it to the original color. -->
+
+    <div id="box"></div>
+
+
+    <script>
+
+        let box = document.getElementById("box");
+        // create a random color
+        
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+
+            let color = `rgb(${r},${g},${b})`;
+            
+            
+        
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = color;
+        })
+        box.addEventListener("mouseleave", () => {
+            box.style.backgroundColor = "red";
+        })
+    </script>
+
+    
+</body>
+</html>
